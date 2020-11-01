@@ -1,100 +1,122 @@
-/* STYLES SPECIFIC TO FOOTER  */
-.footer {
-  width: 100%;
-  position: relative;
-  height: auto;
-  background-color: #070617;
+@import url(https://fonts.googleapis.com/css?family=Rubik:300,400,500,700);
+body {
+  font-family:Rubik,sans-serif;
+  position:relative;
+  font-weight:400;
+  font-size:15px
 }
-.footer .col {
-  width: 190px;
-  height: auto;
-  float: left;
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  padding: 0px 20px 20px 20px;
+ul {
+  padding:0;
+  margin:0
 }
-.footer .col h1 {
-  margin: 0;
-  padding: 0;
-  font-family: inherit;
-  font-size: 12px;
-  line-height: 17px;
-  padding: 20px 0px 5px 0px;
-  color: rgba(255,255,255,0.2);
-  font-weight: normal;
-  text-transform: uppercase;
-  letter-spacing: 0.250em;
+li {
+  list-style:none
 }
-.footer .col ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+a:focus,a:hover {
+  text-decoration:none;
+  -webkit-transition:.3s ease;
+  -o-transition:.3s ease;
+  transition:.3s ease
 }
-.footer .col ul li {
-  color: #999999;
-  font-size: 14px;
-  font-family: inherit;
-  font-weight: bold;
-  padding: 5px 0px 5px 0px;
-  cursor: pointer;
-  transition: .2s;
-  -webkit-transition: .2s;
-  -moz-transition: .2s;
+a:focus {
+  outline:0
 }
-.social ul li {
-  display: inline-block;
-  padding-right: 5px !important;
+img {
+  max-width:100%
 }
-
-.footer .col ul li:hover {
-  color: #ffffff;
-  transition: .1s;
-  -webkit-transition: .1s;
-  -moz-transition: .1s;
+p {
+  font-size:16px;
+  line-height:30px;
+  color:#898b96;
+  font-weight:300
 }
-.clearfix {
-  clear: both;
+h4 {
+  font-family:Rubik,sans-serif;
+  margin:0;
+  font-weight:400;
+  padding:0;
+  color:#363940
 }
-@media only screen and (min-width: 1280px) {
-  .contain {
-    width: 1200px;
-    margin: 0 auto;
-  }
+a {
+  color:#5867dd
 }
-@media only screen and (max-width: 1139px) {
-  .contain .social {
-    width: 1000px;
-    display: block;
-  }
-  .social h1 {
-    margin: 0px;
-  }
+.no-padding {
+  padding:0!important
 }
-@media only screen and (max-width: 950px) {
-  .footer .col {
-    width: 33%;
-  }
-  .footer .col h1 {
-    font-size: 14px;
-  }
-  .footer .col ul li {
-    font-size: 13px;
-  }
+.footer-big {
+  padding:105px 0 65px 0
 }
-@media only screen and (max-width: 500px) {
-  .footer .col {
-    width: 50%;
-  }
-  .footer .col h1 {
-    font-size: 14px;
-  }
-  .footer .col ul li {
-    font-size: 13px;
-  }
+.footer-big .footer-widget {
+  margin-bottom:40px
 }
-@media only screen and (max-width: 340px) {
-  .footer .col {
-    width: 100%;
+.footer--light {
+  background:#e7e8ed
+}
+.footer-big .footer-menu ul li a,.footer-big p,.footer-big ul li {
+  color:#898b96
+}
+.footer-menu {
+  padding-left:48px
+}
+.footer-menu ul li a {
+  font-size:15px;
+  line-height:32px;
+  -webkit-transition:.3s;
+  -o-transition:.3s;
+  transition:.3s
+}
+.footer-menu ul li a:hover {
+  color:#5867dd
+}
+.footer-menu--1 {
+  width:100%
+}
+.footer-widget-title {
+  line-height:42px;
+  margin-bottom:10px;
+  font-size:18px
+}
+.mini-footer {
+  background:#192027;
+  text-align:center;
+  padding:32px 0
+}
+.mini-footer p {
+  margin:0;
+  line-height:26px;
+  font-size:15px;
+  color:#999
+}
+.mini-footer p a {
+  color:#5867dd
+}
+.mini-footer p a:hover {
+  color:#34bfa3
+}
+.widget-about img {
+  display:block;
+  margin-bottom:30px
+}
+.widget-about p {
+  font-weight:400
+}
+.widget-about .contact-details {
+  margin:30px 0 0 0
+}
+.widget-about .contact-details li {
+  margin-bottom:10px
+}
+.widget-about .contact-details li:last-child {
+  margin-bottom:0
+}
+.widget-about .contact-details li span {
+  padding-right:12px
+}
+.widget-about .contact-details li a {
+  color:#5867dd
+}
+@media (max-width:991px) {
+  .footer-menu {
+    padding-left:0
   }
 }
