@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Heroes\Heroes AS Herois;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,4 +19,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::apiResource('heroes','Heroes\\Heroes');
+Route::apiResource('heroes',Herois::class);
