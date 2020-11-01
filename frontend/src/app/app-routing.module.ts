@@ -2,10 +2,15 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {HomeComponent} from "./home/home.component";
 import {HeroesReadComponent} from "./heroes/heroes-read/heroes-read.component";
+import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
+import {HeroesViewComponent} from "./heroes/heroes-view/heroes-view.component";
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'heroes', component: HeroesReadComponent },
+  { path: 'heroes/:id', component: HeroesViewComponent },
+  { path: '**', component: PageNotFoundComponent },
+
 ];
 
 @NgModule({
