@@ -3,18 +3,18 @@
 # Heroes Jupiter
 Projeto Heroes __Orlando Jawara__ Angular 2020
 
-##Tecnologias
+## Tecnologias
 
 Tecnologia|Nome|Versão
 ---|---| ---
 Typescript |Angular | v 10.0
 PHP |Laravel | v 8.2
 
-##Developer
+## Developer
 
 - Orlando Jawara
 
-###Requerimentos
+### Requerimentos
 
 - [x] php
 - [x] typescript
