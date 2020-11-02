@@ -20,3 +20,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::apiResource('heroes',Herois::class);
+Route::post('heroes-alt-img/{id}','App\Http\Controllers\Heroes\Heroes@updateImg');
+

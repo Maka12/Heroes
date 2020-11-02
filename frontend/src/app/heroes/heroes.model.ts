@@ -1,4 +1,6 @@
 export interface HeroesModel{
   id?:number,
-  name: string
+  name: string,
+  description: string,
+  image: any
 }

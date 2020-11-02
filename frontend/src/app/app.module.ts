@@ -17,9 +17,7 @@ import { HeroesViewComponent } from './heroes/heroes-view/heroes-view.component'
 import { HttpClientModule } from '@angular/common/http';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatCardModule} from '@angular/material/card';
-
-
-
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -42,7 +40,9 @@ import {MatCardModule} from '@angular/material/card';
     MatGridListModule,
     HttpClientModule,
     MatSnackBarModule,
-    MatCardModule
+    MatCardModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
