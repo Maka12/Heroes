@@ -11,6 +11,7 @@ class Heroes extends Controller
 {
     private $data;
     private $data_upload;
+    private $dados=[];
 
     /**
      * Display a listing of the resource.
@@ -32,23 +33,22 @@ class Heroes extends Controller
      */
     public function store(Request $request)
     {
-        var_dump($request->file('image'));
-        /*Salva Usuario
-        $this->data = HeroesModel::create($request->all());
+        //Salva Usuario
+        $dados['name']=$request->name;
+        $dados['image']=$request->file('image')->getClientOriginalName();
+        $dados['description']=$request->description;
+        $this->data = HeroesModel::create($dados);
         if ($this->data){
-            var_dump($this->data['id'] );
-
             $this->data_upload = [
                 'type' => $request->file('image')->getClientMimeType(),
                 'tmp_name' => $request->file('image')->getPathname(),
-                'size' => $request->file('image')->getClientSize(),
+                'size' => $request->file('image')->getSize(),
             ];
             $uploadimg = new \App\Http\Controllers\Functions\UploadImgRed();
             $uploadimg->uploadImagem($this->data_upload, public_path("/img/heroes/" . $this->data['id'] . "/")
-                , $request->file('imagem')->getClientOriginalName(), 350, 350);
+                , $request->file('image')->getClientOriginalName(), 350, 350);
         }
-
-        return response($this->data, 201);*/
+        return response($this->data, 201);
     }
 
     /**

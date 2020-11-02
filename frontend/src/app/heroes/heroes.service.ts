@@ -13,9 +13,11 @@ import {catchError, map} from "rxjs/operators";
   providedIn: 'root'
 })
 export class HeroesService {
+
   baseUrl = 'http://127.0.0.1:8000/api/heroes';
   horizontalPosition: MatSnackBarHorizontalPosition = 'right';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
+
 
   constructor(private _snackBar: MatSnackBar, private http: HttpClient) {
   }
@@ -30,7 +32,11 @@ export class HeroesService {
   }
 
   Create(data: HeroesModel): Observable<HeroesModel> {
-    return this.http.post<HeroesModel>(this.baseUrl, data).pipe(
+    const formData = new FormData()
+    formData.append('name', data.name)
+    formData.append('image', data.image)
+    formData.append('description', data.description)
+    return this.http.post<HeroesModel>(this.baseUrl, formData).pipe(
       map(obj => obj), catchError(e => this.ErrorHandler(e))
     );
   }

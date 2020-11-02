@@ -10,7 +10,7 @@ import {Router} from "@angular/router";
 })
 export class HomeComponent implements OnInit {
   data = []
-
+  urlApi= 'http://127.0.0.1:8000/img/heroes'
   constructor(private HeroService: HeroesService, private router: Router) {
   }
 
@@ -29,6 +29,11 @@ export class HomeComponent implements OnInit {
 
   onSubmit() {
     // TODO: Use EventEmitter with form value
+   /* const formData = new FormData()
+    formData.append('name',this.profileForm.get('name').value)
+    formData.append('image',this.profileForm.get('image').value)
+    formData.append('description',this.profileForm.get('description').value)*/
+
     this.HeroService.Create(this.profileForm.value).subscribe(() => {
       this.HeroService.ShowMessage('Usuario Criado')
       this.router.navigate(['/home'])
