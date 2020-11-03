@@ -38,33 +38,31 @@ export class HeroesUpdateComponent implements OnInit {
   }
 
   onSubmit() {
-    // TODO: Use EventEmitter with form value
-    /* const formData = new FormData()
-     formData.append('name',this.profileForm.get('name').value)
-     formData.append('image',this.profileForm.get('image').value)
-     formData.append('description',this.profileForm.get('description').value)*/
-
     this.HeroesService.Update(this.profileForm.value).subscribe(() => {
-      this.HeroesService.ShowMessage('Usuario Criado')
+      this.HeroesService.ShowMessage('Heroi atualizado com sucesso')
       this.router.navigate([' '])
     })
-    // console.log(this.profileForm.value)
   }
 
-  onFileChange(event) {
+  onSubmitImg() {
+  //  console.log(this.profileForm.value)
+    this.HeroesService.UpdateImg(this.profileForm.value).subscribe(() => {
+      this.HeroesService.ShowMessage('Imagem de heroi atualizado com sucesso')
+      this.router.navigate([' '])
+    })
+  }
+
+    onFileChange(event) {
     if (event.target.files.length > 0) {
       const file = event.target.files[0];
       this.profileForm.patchValue({
         image: file
       });
     }
-
     if (event.target.files && event.target.files[0]) {
       const file = event.target.files[0];
-
       const reader = new FileReader();
       reader.onload = e => this.imageSrc = reader.result;
-
       reader.readAsDataURL(file);
     }
   }

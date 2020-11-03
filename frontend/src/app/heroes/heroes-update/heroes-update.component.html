@@ -3,15 +3,15 @@
     <div class="col-7">
       <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
 
-        <input type="hidden" value="{{hero.id}}" formControlName="id">
+        <input type="hidden" [(ngModel)]="hero.id" formControlName="id">
         <div class="form-group">
           <label for="recipient-name" class="col-form-label"><span class="text-danger">*</span> Nome:</label>
-          <input type="text" formControlName="name" class="form-control" id="recipient-name" value="{{hero.name}}">
+          <input type="text" formControlName="name" class="form-control" id="recipient-name" [(ngModel)]="hero.name">
         </div>
         <div class="form-group">
           <label for="recipient-description" class="col-form-label"><span class="text-danger">*</span>
             Descrição:</label>
-          <ckeditor [ngClass]="hero.description" formControlName="description" id="recipient-description">
+          <ckeditor [(ngModel)]="hero.description" formControlName="description" id="recipient-description">
           </ckeditor>
         </div>
         <div class="modal-footer">
@@ -20,26 +20,27 @@
       </form>
     </div>
     <div class="col-5">
-      <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+      <form [formGroup]="profileForm" (ngSubmit)="onSubmitImg()">
+        <div class="form-group">
+          <label for="recipient-description" class="col-form-label"><span class="text-danger">*</span>
+            Imagem:</label>
+          <div class="input-group mb-3">
+            <input type="hidden" [(ngModel)]="hero.id" formControlName="id">
 
-      <div class="form-group">
-        <label for="recipient-description" class="col-form-label"><span class="text-danger">*</span>
-          Imagem:</label>
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+            </div>
+            <div class="custom-file">
+              <input type="file" (change)="onFileChange($event)" class="custom-file-input" id="inputGroupFile01"
+                     aria-describedby="inputGroupFileAddon01">
+              <label class="custom-file-label" for="inputGroupFile01">Imagem [300x300] até 1MB </label>
+            </div>
           </div>
-          <div class="custom-file">
-            <input type="file" (change)="onFileChange($event)" class="custom-file-input" id="inputGroupFile01"
-                   aria-describedby="inputGroupFileAddon01">
-            <label class="custom-file-label" for="inputGroupFile01">Imagem [300x300] até 1MB </label>
+          <img [src]="imageSrc || 'http://placehold.it/180'" class="img-fluid" alt="your image"/>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-warning">Atualizar</button>
           </div>
         </div>
-        <img [src]="imageSrc || 'http://placehold.it/180'" class="img-fluid" alt="your image"/>
-        <div class="modal-footer">
-          <button type="submit" class="btn btn-warning">Atualizar</button>
-        </div>
-      </div>
       </form>
 
     </div>

@@ -75,10 +75,11 @@ class Heroes extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->dados['name'] = $request->name;
+        $this->dados['description'] = $request->description;
         $this->data = HeroesModel::where(['id' => $id])->first();
         if ($this->data) {
-            $this->data->update($request->all());
+            $this->data->update($this->dados);
             return response($this->data, 200);
         }
     }
@@ -86,10 +87,10 @@ class Heroes extends Controller
     public function updateImg(Request $request, $id)
     {
         $message = [
-            'imagem.image' => htmlspecialchars('É necessario uma imagem')
+            'image.image' => htmlspecialchars('É necessario uma imagem')
         ];
         $rules = [
-            'imagem' => 'required|image',
+            'image' => 'required|image',
         ];
         $this->validator = Validator::make($request->all(), $rules, $message);
         if ($this->validator->fails()):
@@ -101,19 +102,19 @@ class Heroes extends Controller
             else:
                 $uploadimg = new \App\Http\Controllers\Functions\UploadImgRed();
                 $this->data_upload = [
-                    'type' => $request->file('imagem')->getClientMimeType(),
-                    'tmp_name' => $request->file('imagem')->getPathname(),
-                    'size' => $request->file('imagem')->getClientSize(),
+                    'type' => $request->file('image')->getClientMimeType(),
+                    'tmp_name' => $request->file('image')->getPathname(),
+                    'size' => $request->file('image')->getSize(),
                 ];
                 $uploadimg->uploadImagem($this->data_upload, public_path("/img/heroes/" . $this->data['id'] . "/")
-                    , $request->file('imagem')->getClientOriginalName(), 350, 350);
+                    , $request->file('image')->getClientOriginalName(), 350, 350);
                 if ($uploadimg->getResultado()) {
                     $this->dados = [
-                        'imagem' => $request->file('imagem')->getClientOriginalName(),
+                        'image' => $request->file('image')->getClientOriginalName(),
                     ];
-                    if (!is_null($this->data['imagem'])) {
+                    if (!is_null($this->data['image'])) {
                         $apagarimg = new \App\Http\Controllers\Functions\UpdateImg();
-                        $apagarimg->atualizarImg(public_path("/img/heroes/" . $this->data['id'] . "/") . $this->data['imagem']);
+                        $apagarimg->atualizarImg(public_path("/img/heroes/" . $this->data['id'] . "/") . $this->data['image']);
                     }
                     $this->data = HeroesModel::where('id', $id)->update($this->dados);
                     return response()->json(["message" => htmlspecialchars("Imagem atualizada com sucesso")], 201);

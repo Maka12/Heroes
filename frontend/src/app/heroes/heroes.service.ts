@@ -8,6 +8,7 @@ import {
   MatSnackBarVerticalPosition,
 } from '@angular/material/snack-bar';
 import {catchError, map} from "rxjs/operators";
+import {GlobalConstants} from "../common/global-constants";
 
 
 @Injectable({
@@ -15,7 +16,8 @@ import {catchError, map} from "rxjs/operators";
 })
 export class HeroesService {
 
-  baseUrl = 'http://127.0.0.1:8000/api/heroes';
+  baseUrl = `${GlobalConstants.apiURL}/api/heroes`;
+  baseUrlImg = `${GlobalConstants.apiURL}/api/heroes-alt-img`;
   horizontalPosition: MatSnackBarHorizontalPosition = 'right';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
 
@@ -58,6 +60,15 @@ export class HeroesService {
   Update(data: HeroesModel) {
     const url = `${this.baseUrl}/${data.id}`;
     return this.http.put<HeroesModel>(url, data).pipe(
+      map(obj => obj), catchError(e => this.ErrorHandler(e))
+    )
+  }
+
+  UpdateImg(data: HeroesModel) {
+    const url = `${this.baseUrlImg}/${data.id}`;
+    const formData = new FormData()
+    formData.append('image', data.image)
+    return this.http.post<HeroesModel>(url, formData).pipe(
       map(obj => obj), catchError(e => this.ErrorHandler(e))
     )
   }
