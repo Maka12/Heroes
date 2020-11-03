@@ -20,6 +20,9 @@ import {MatCardModule} from '@angular/material/card';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {DragDropModule} from "@angular/cdk/drag-drop";
 import {MatButtonModule} from "@angular/material/button";
+import {CKEditorModule} from 'ng2-ckeditor';
+import {HeroesUpdateComponent} from './heroes/heroes-update/heroes-update.component';
+
 
 
 @NgModule({
@@ -31,6 +34,7 @@ import {MatButtonModule} from "@angular/material/button";
     HomeComponent,
     PageNotFoundComponent,
     HeroesViewComponent,
+    HeroesUpdateComponent,
   ],
     imports: [
         BrowserModule,
@@ -46,7 +50,8 @@ import {MatButtonModule} from "@angular/material/button";
         FormsModule,
         ReactiveFormsModule,
         DragDropModule,
-        MatButtonModule
+        MatButtonModule,
+        CKEditorModule,
     ],
   providers: [],
   bootstrap: [AppComponent]

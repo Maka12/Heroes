@@ -8,7 +8,10 @@
         <div class="example-box" *ngFor="let hero of heroes" cdkDrag>
           {{hero.name}}
           <div class="example-button-container">
-            <button routerLink="/heroes/{{hero.id}}" class="mr-2" mat-mini-fab color="primary" aria-label="Example icon button with a filter list icon">
+            <button routerLink="/heroes-view/{{hero.id}}" class="mr-2" mat-mini-fab color="primary" aria-label="Example icon button with a filter list icon">
+              <mat-icon>visibility</mat-icon>
+            </button>
+            <button routerLink="/heroes-edit/{{hero.id}}" class="mr-2" mat-mini-fab color="primary" aria-label="Example icon button with a filter list icon">
               <mat-icon>edit</mat-icon>
             </button>
             <button  mat-mini-fab color="warn" aria-label="Example icon button with a filter list icon">

@@ -2,13 +2,16 @@
   <img src="assets/img/ultron.jpg" class="card-img" alt="...">
   <div class="card-img-overlay">
     <h5 class="card-title">Card title</h5>
-    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.
+      This content is a little bit longer.</p>
     <p class="card-text">Last updated 3 mins ago</p>
   </div>
 </div>
 <div class="container">
   <!-- Button trigger modal -->
-  <button type="button" class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#exampleModal">Novo Heroi</button>
+  <button type="button" class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#exampleModal">Novo
+    Heroi
+  </button>
   <div class="row row-cols-1 row-cols-md-2">
     <div *ngFor="let heroes of data" class="col mb-4">
       <div class="card">
@@ -23,7 +26,7 @@
 </div>
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-xl">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">New message</h5>
@@ -33,23 +36,42 @@
       </div>
       <div class="modal-body">
         <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
-          <div class="form-group">
-            <label for="recipient-name" class="col-form-label">Heroi:</label>
-            <input type="text" formControlName="name" class="form-control" id="recipient-name">
-          </div>
-          <div class="form-group">
-            <label for="recipient-name" class="col-form-label">Imagem</label>
-            <input type="file" (change)="onFileChange($event)" class="form-control">
-          </div>
-          <div class="form-group">
-            <label for="message-text" class="col-form-label">Descrição:</label>
-            <textarea class="form-control" formControlName="description" id="message-text"></textarea>
+          <div class="row">
+            <div class="col-7">
+              <div class="form-group">
+                <label for="recipient-name" class="col-form-label"><span class="text-danger">*</span> Nome:</label>
+                <input type="text" formControlName="name" class="form-control" id="recipient-name">
+              </div>
+              <div class="form-group">
+                <label for="recipient-description" class="col-form-label"><span class="text-danger">*</span>
+                  Descrição:</label>
+                <ckeditor formControlName="description" id="recipient-description"></ckeditor>
+              </div>
+            </div>
+            <div class="col-5">
+              <div class="form-group">
+                <label for="recipient-description" class="col-form-label"><span class="text-danger">*</span>
+                  Imagem:</label>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                  </div>
+                  <div class="custom-file">
+                    <input type="file" (change)="onFileChange($event)" class="custom-file-input" id="inputGroupFile01"
+                           aria-describedby="inputGroupFileAddon01">
+                    <label class="custom-file-label" for="inputGroupFile01">Imagem [300x300] até 1MB </label>
+                  </div>
+                </div>
+                <img [src]="imageSrc || 'http://placehold.it/180'" class="img-fluid" alt="your image"/>
+              </div>
+            </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary" >Send message</button>
+            <button type="submit" class="btn btn-primary">Send message</button>
           </div>
         </form>
+
       </div>
 
     </div>

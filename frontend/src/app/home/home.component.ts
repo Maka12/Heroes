@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {HeroesService} from "../heroes/heroes.service";
 import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
 import {Router} from "@angular/router";
+import {GlobalConstants} from "../common/global-constants";
 
 @Component({
   selector: 'app-home',
@@ -10,15 +11,15 @@ import {Router} from "@angular/router";
 })
 export class HomeComponent implements OnInit {
   data = []
-  urlApi= 'http://127.0.0.1:8000/img/heroes'
+  urlApi=`${GlobalConstants.apiURL}/img/heroes`
+  imageSrc: any
+
   constructor(private HeroService: HeroesService, private router: Router) {
   }
-
   profileForm = new FormGroup({
     name: new FormControl(''),
     description: new FormControl(''),
     image: new FormControl('')
-
   });
 
   ngOnInit(): void {
@@ -38,7 +39,7 @@ export class HomeComponent implements OnInit {
       this.HeroService.ShowMessage('Usuario Criado')
       this.router.navigate(['/home'])
     })
-    console.log(this.profileForm.value)
+   // console.log(this.profileForm.value)
   }
 
   onFileChange(event) {
@@ -47,6 +48,15 @@ export class HomeComponent implements OnInit {
       this.profileForm.patchValue({
         image: file
       });
+    }
+
+    if (event.target.files && event.target.files[0]) {
+      const file = event.target.files[0];
+
+      const reader = new FileReader();
+      reader.onload = e => this.imageSrc = reader.result;
+
+      reader.readAsDataURL(file);
     }
   }
 

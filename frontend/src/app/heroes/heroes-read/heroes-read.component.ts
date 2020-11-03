@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 import {HeroesService} from "../heroes.service";
+import {GlobalConstants} from "../../common/global-constants";
 
 
 @Component({
@@ -12,7 +13,7 @@ export class HeroesReadComponent implements OnInit {
 
   // tslint:disable:max-line-length
   heroes = []
-  urlApi = 'http://127.0.0.1:8000/img/heroes'
+  urlApi=`${GlobalConstants.apiURL}/img/heroes`
   // tslint:enable:max-line-length
 
   drop(event: CdkDragDrop<{name: string, image: string}[]>) {
