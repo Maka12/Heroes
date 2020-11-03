@@ -19,6 +19,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatCardModule} from '@angular/material/card';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {DragDropModule} from "@angular/cdk/drag-drop";
+import {MatButtonModule} from "@angular/material/button";
 
 
 @NgModule({
@@ -31,21 +32,22 @@ import {DragDropModule} from "@angular/cdk/drag-drop";
     PageNotFoundComponent,
     HeroesViewComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatMenuModule,
-    MatGridListModule,
-    HttpClientModule,
-    MatSnackBarModule,
-    MatCardModule,
-    FormsModule,
-    ReactiveFormsModule,
-    DragDropModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatToolbarModule,
+        MatIconModule,
+        MatMenuModule,
+        MatGridListModule,
+        HttpClientModule,
+        MatSnackBarModule,
+        MatCardModule,
+        FormsModule,
+        ReactiveFormsModule,
+        DragDropModule,
+        MatButtonModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

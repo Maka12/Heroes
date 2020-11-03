@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {HeroesService} from "../heroes.service";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-heroes-view',
@@ -6,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./heroes-view.component.css']
 })
 export class HeroesViewComponent implements OnInit {
-
-  constructor() { }
+  constructor(private HeroesService: HeroesService, private rota: ActivatedRoute) { }
 
   ngOnInit(): void {
+    const id = this.rota.snapshot.paramMap.get('id')
+    this.HeroesService.View(id).subscribe(hero =>{
+
+    })
   }
 
 }

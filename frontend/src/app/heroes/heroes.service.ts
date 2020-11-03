@@ -47,7 +47,7 @@ export class HeroesService {
     )
   }
 
-  View(id: number): Observable<HeroesModel> {
+  View(id: string): Observable<HeroesModel> {
     const url = `${this.baseUrl}/${id}`;
     return this.http.get<HeroesModel>(url).pipe(
       map(obj => obj), catchError(e => this.ErrorHandler(e))

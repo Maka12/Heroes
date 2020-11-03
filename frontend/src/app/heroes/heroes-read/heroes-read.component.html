@@ -7,6 +7,14 @@
       <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
         <div class="example-box" *ngFor="let hero of heroes" cdkDrag>
           {{hero.name}}
+          <div class="example-button-container">
+            <button routerLink="/heroes/{{hero.id}}" class="mr-2" mat-mini-fab color="primary" aria-label="Example icon button with a filter list icon">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button  mat-mini-fab color="warn" aria-label="Example icon button with a filter list icon">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
           <img *cdkDragPreview [src]="urlApi+'/'+hero.id+'/'+hero.image" [alt]="hero.name">
         </div>
       </div>
@@ -15,13 +23,37 @@
   </div>
   <div class="row">
     <div class="col">
-      1 of 3
+      <div class="card bg-dark text-white">
+        <img src="..." class="card-img" alt="...">
+        <div class="card-img-overlay">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+            content. This content is a little bit longer.</p>
+          <p class="card-text">Last updated 3 mins ago</p>
+        </div>
+      </div>
     </div>
     <div class="col">
-      2 of 3
+      <div class="card bg-dark text-white">
+        <img src="..." class="card-img" alt="...">
+        <div class="card-img-overlay">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+            content. This content is a little bit longer.</p>
+          <p class="card-text">Last updated 3 mins ago</p>
+        </div>
+      </div>
     </div>
     <div class="col">
-      3 of 3
+      <div class="card bg-dark text-white">
+        <img src="..." class="card-img" alt="...">
+        <div class="card-img-overlay">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+            content. This content is a little bit longer.</p>
+          <p class="card-text">Last updated 3 mins ago</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
