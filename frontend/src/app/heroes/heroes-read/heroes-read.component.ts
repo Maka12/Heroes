@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 import {HeroesService} from "../heroes.service";
 import {GlobalConstants} from "../../common/global-constants";
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -20,12 +21,20 @@ export class HeroesReadComponent implements OnInit {
     moveItemInArray(this.heroes, event.previousIndex, event.currentIndex);
   }
 
-  constructor(private HeroService: HeroesService) { }
+  constructor(private HeroService: HeroesService, private Route: Router) { }
 
   ngOnInit(): void {
     this.HeroService.Read().subscribe(heroes => {
       this.heroes = heroes
     });
+  }
+  ApagarHeroi(id){
+    console.log(id)
+    /*
+    this.HeroService.Delete(id).subscribe( () =>{
+       this.HeroService.ShowMessage('Heroi apagado com sucesso')
+       this.Route.navigate(['/home'])
+    })*/
   }
 
 }

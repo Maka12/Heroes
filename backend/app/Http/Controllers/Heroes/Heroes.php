@@ -136,6 +136,12 @@ class Heroes extends Controller
     {
         $this->data = HeroesModel::find($id);
         if ($this->data) {
+            if (isset( $this->data['image']) and !is_null( $this->data['image'])) {
+                $apagarImg = new \App\Http\Controllers\Functions\DeleteImg();
+                $apagarImg->apagarImg(public_path("/img/heroes/" .  $this->data['id'] . "/") .  $this->data['imagem'],
+                    public_path("/img/heroes/" .  $this->data['id'])
+                );
+            }
             $this->data->delete();
             return response($this->data, 204);
         }

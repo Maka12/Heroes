@@ -30,11 +30,11 @@
                   </button>
                 </div>
                 <div class="modal-body">
-                  <p>Tem Certeza que deseja apagar o Hério {{hero.id}}</p>
+                  <p>Tem Certeza que deseja apagar o Hério {{hero.name}} ?</p>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
+                  <button type="button" class="btn btn-danger" (click)="ApagarHeroi(hero.id)">Save changes</button>
                 </div>
               </div>
             </div>
