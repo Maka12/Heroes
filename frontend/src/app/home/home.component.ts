@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {HeroesService} from "../heroes/heroes.service";
 import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
 import {Router} from "@angular/router";
@@ -13,6 +13,8 @@ export class HomeComponent implements OnInit {
   data = []
   urlApi=`${GlobalConstants.apiURL}/img/heroes`
   imageSrc: any
+  @ViewChild('closebutton') closebutton;
+
 
   constructor(private HeroService: HeroesService, private router: Router) {
   }
@@ -29,17 +31,11 @@ export class HomeComponent implements OnInit {
   }
 
   onSubmit() {
-    // TODO: Use EventEmitter with form value
-   /* const formData = new FormData()
-    formData.append('name',this.profileForm.get('name').value)
-    formData.append('image',this.profileForm.get('image').value)
-    formData.append('description',this.profileForm.get('description').value)*/
-
     this.HeroService.Create(this.profileForm.value).subscribe(() => {
+      this.closebutton.nativeElement.click();
+      this.router.navigate(['/'])
       this.HeroService.ShowMessage('Usuario Criado')
-      this.router.navigate(['/home'])
     })
-   // console.log(this.profileForm.value)
   }
 
   onFileChange(event) {

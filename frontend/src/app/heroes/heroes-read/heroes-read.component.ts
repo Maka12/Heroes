@@ -28,10 +28,11 @@ export class HeroesReadComponent implements OnInit {
       this.heroes = heroes
     });
   }
+
   ApagarHeroi(id){
-    this.HeroService.Delete(id).subscribe( () =>{
+    this.HeroService.Delete(id).subscribe( () => {
        this.HeroService.ShowMessage('Heroi apagado com sucesso')
-       this.Route.navigate(['/home'])
+       this.Route.navigate(['/'])
     })
   }
 
