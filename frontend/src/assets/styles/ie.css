@@ -1,0 +1,5 @@
+/*For IE 9 */
+
+.tagcloud { text-align:justify\9; }
+.fullwrap-video video { display:none; }
+.search-form_header input[type="text"] { padding-top: 0; }

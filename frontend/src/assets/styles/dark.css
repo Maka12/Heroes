@@ -1,0 +1,106 @@
+/* Dark-Background Color scheme*/
+/* link this css file below style.css */
+/*  Auxiliary color  */
+.slider-panel,.quote-wrap,#main_title_wrap,.nav-tabs > li,.item_des,.audio_player_list,.promote-wrap,.process-bar-wrap,.post_meta,.pagenumber a,.countdown_section,.progress-wrap .progress-bar,.interlock-item,
+.pagenumber span,.testimenials,.testimenials .arrow-bg,.carousel-wrap a,.pagenums a,.pagenums span,.accordion-heading,.page-numbers,.testimonial-thum-bg,.latest-posts-tit,.single-feild,.gallery-wrap-sidebar .related-post-wrap,.gallery-wrap-sidebar .comment-wrap,.chosen-container-active.chosen-with-drop .chosen-single,
+{ 
+  background-color: #333333; 
+}
+.progress_bars_with_image_content .bar .bar_noactive.grey {
+  color: #333333; 
+}
+.border-style2,.border-style3,.nav-tabs > li > a,.tab-content,.nav-tabs > .active > a, .nav-tabs > .active > a:hover, .nav-tabs > .active > a:focus,.tabs-v,.single-feild
+{ 
+  border-color: #333333;  
+}
+.nav.nav-tabs, .tabs-v .nav-tabs > li:last-child.active>a{
+  border-bottom-color: #333333; 
+}
+.tab-content.tab-content-v {
+  border-left-color: #333333;  
+}
+.tabs-v .nav-tabs > .active > a {
+  border-top-color: #333333; 
+}
+
+
+/* Post & Page */
+/* Title color*/
+#comments .comment-author a,h1,h2,h3,h4,h5,h6,.archive-tit a,.blog-item-main h2 a,.item_title a,#sidebar .social_active i:hover,.countdown_amount,.latest-posts-tit a,
+.nav-tabs > .active > a, .nav-tabs > .active > a:hover, .nav-tabs > .active > a:focus,.accordion-heading .accordion-toggle,.item_des .item_title a,
+.infrographic.bar .bar-percent,.jqbar.vertical span,.item_title a,.team-item-con-back a,.team-item-con-back i,.team-item-con-h p,.slider-panel-item h2.slider-title a,
+#respondwrap textarea, #respondwrap input, .contactform input[type="text"], .contactform textarea,#respondwrap input#submit:hover,.contactform input[type="submit"]:hover
+{ 
+    color:#fafafa; 
+}
+li.commlist-unit,
+.gallery-wrap-fullwidth .gallery-info-property,
+.accordion-heading,
+#respondwrap textarea, #respondwrap input, .contactform input[type="text"], .contactform textarea,
+#respondwrap input#submit,.contactform input[type="submit"]
+{ 
+    border-color: #fafafa; 
+}
+h1.main-title:before,.team-item-con,.archive-wrap li:before,.ux-btn:hover,.related-post-wrap h2:before,#respondwrap input#submit,.contactform input[type="submit"],
+.galleria-info,#float-bar-triggler,.float-bar-inn,.galleria-image-nav-left:after, .galleria-image-nav-right:after,.comm-reply-title:after,.tw_style a,
+.promote-button:hover,.filter-floating li, .filter-floating-triggle,.item_title:before,.accordion-style-b .accordion-heading a:before,.accordion-style-b .accordion-heading a:after,
+.separator_inn.bg-,.carousel-indicators li
+ {
+  background-color: #fafafa;
+}
+
+/* Content color */
+body,a,.entry p a:hover,.text_block a:hover,#content_wrap,#comments .reply a,#comments,.blog-item-excerpt,.item_des,.item_des a,
+h3#reply-title small, #comments .nav-tabs li.active h3#reply-title .logged,#comments .nav-tabs li a:hover h3 .logged,
+.header-info-mobile,.carousel-wrap a.disabled:hover,.filters li a:hover
+{ 
+  color:#cccccc; 
+}
+.filters li a:before {
+    background-color:#ccc; 
+}
+
+/*  Meta font color*/
+.post_meta>li,.post_meta>li a,.blog_meta,.blog_meta a,.post-meta, .post-meta a,.archive-meta-unit,.archive-meta-unit a,.latest-posts-tags a,
+#mobile-header-meta p,.bbp-meta,.bbp-meta a,.bbp-author-role,.bbp-pagination-count,span.bbp-author-ip,.bbp-forum-content,.infrographic-subtit
+{ 
+  color:#999999; 
+}
+
+/* Content Bg Color */
+#main,.separator h4,.float-bar-triggler-inn:before, .float-bar-triggler-inn:after, .float-bar-triggler-inn,
+.nav-tabs > .active > a, .nav-tabs > .active > a:hover, .nav-tabs > .active > a:focus,.tab-content,.filters.filter-floating li a:before,
+.chosen-container .chosen-drop,.modal-dialog .modal-content
+{ 
+  background-color: #2b2b2b;
+}
+.testimenials span.arrow,.nav-tabs > .active > a, .nav-tabs > .active > a:hover, .nav-tabs > .active > a:focus { 
+    border-bottom-color: #2b2b2b; 
+}
+.tabs-v .nav-tabs > .active > a
+{ 
+  border-right-color: #2b2b2b; 
+}
+#post-navi ,#post-navi a,.float-bar-social-share button,#respondwrap input#submit,.contactform input[type="submit"],.tw_style a,
+.filter-floating a,.filter-floating a:hover,.filter-floating i,.galleria-info-title, .galleria-image-nav, .galleria-counter {
+  color: #2b2b2b; 
+}
+
+
+/* Sidebar widget*/
+/*Sidebar Widget BG Color*/
+#sidebar-widget { 
+  background-color: #2b2b2b;
+}
+
+/*Sidebar Widget Title Color*/
+.sidebar_widget h3.widget-title,
+.sidebar_widget h3.widget-title a { 
+  color: #cccccc;
+}
+
+/*Sidebar Widget Content Color*/
+.sidebar_widget,
+.sidebar_widget a { 
+  color: #aaaaaa; 
+}

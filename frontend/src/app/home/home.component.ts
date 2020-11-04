@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, Input, OnInit, ViewChild} from '@angular/core';
 import {HeroesService} from "../heroes/heroes.service";
 import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
 import {Router} from "@angular/router";
@@ -13,9 +13,12 @@ import {NgxSpinnerService} from "ngx-spinner";
 })
 export class HomeComponent implements OnInit {
   @ViewChild('closebutton') closebutton;
+  @Input() public numSwitch = 1;
+
   data = []
   urlApi = `${GlobalConstants.apiURL}/img/heroes`
   imageSrc: any
+//  numSwitch = 1
 
   drop(event: CdkDragDrop<string[]>) {
     moveItemInArray(this.data, event.previousIndex, event.currentIndex);
@@ -45,9 +48,9 @@ export class HomeComponent implements OnInit {
 
   onSubmit() {
     this.HeroService.Create(this.profileForm.value).subscribe(() => {
-      this.router.navigate(['/'])
       this.closebutton.nativeElement.click();
       this.HeroService.ShowMessage('Heroi criado com sucesso')
+      this.router.navigate(['/'])
     })
   }
 

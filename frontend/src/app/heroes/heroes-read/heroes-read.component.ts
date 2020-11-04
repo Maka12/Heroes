@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 import {HeroesService} from "../heroes.service";
 import {GlobalConstants} from "../../common/global-constants";
@@ -12,7 +12,7 @@ import {NgxSpinnerService} from "ngx-spinner";
   styleUrls: ['./heroes-read.component.css']
 })
 export class HeroesReadComponent implements OnInit {
-
+  @ViewChild('closebuttonD') closebuttonD;
   // tslint:disable:max-line-length
   heroes = []
   urlApi = `${GlobalConstants.apiURL}/img/heroes`
@@ -23,7 +23,7 @@ export class HeroesReadComponent implements OnInit {
     moveItemInArray(this.heroes, event.previousIndex, event.currentIndex);
   }
 
-  constructor(private HeroService: HeroesService, private Route: Router, private spinner: NgxSpinnerService) {
+  constructor(private HeroService: HeroesService, private route: Router, private spinner: NgxSpinnerService) {
   }
 
   ngOnInit(): void {
@@ -42,8 +42,9 @@ export class HeroesReadComponent implements OnInit {
 
   ApagarHeroi(id) {
     this.HeroService.Delete(id).subscribe(() => {
+      this.closebuttonD.nativeElement.click();
       this.HeroService.ShowMessage('Heroi apagado com sucesso')
-      this.Route.navigate(['/'])
+      this.route.navigate(['/'])
     })
   }
 
