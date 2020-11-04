@@ -22,6 +22,10 @@ import {DragDropModule} from "@angular/cdk/drag-drop";
 import {MatButtonModule} from "@angular/material/button";
 import {CKEditorModule} from 'ng2-ckeditor';
 import {HeroesUpdateComponent} from './heroes/heroes-update/heroes-update.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {SpinnerComponent} from './parts/spinner/spinner.component';
+import {NgxSpinnerModule} from "ngx-spinner";
+import { NbThemeModule } from '@nebular/theme';
 
 
 
@@ -35,24 +39,27 @@ import {HeroesUpdateComponent} from './heroes/heroes-update/heroes-update.compon
     PageNotFoundComponent,
     HeroesViewComponent,
     HeroesUpdateComponent,
+    SpinnerComponent,
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        MatToolbarModule,
-        MatIconModule,
-        MatMenuModule,
-        MatGridListModule,
-        HttpClientModule,
-        MatSnackBarModule,
-        MatCardModule,
-        FormsModule,
-        ReactiveFormsModule,
-        DragDropModule,
-        MatButtonModule,
-        CKEditorModule,
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatMenuModule,
+    MatGridListModule,
+    HttpClientModule,
+    MatSnackBarModule,
+    MatCardModule,
+    FormsModule,
+    ReactiveFormsModule,
+    DragDropModule,
+    MatButtonModule,
+    CKEditorModule,
+    MatProgressSpinnerModule,
+    NgxSpinnerModule,
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

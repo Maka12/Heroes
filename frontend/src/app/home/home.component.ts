@@ -3,6 +3,8 @@ import {HeroesService} from "../heroes/heroes.service";
 import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
 import {Router} from "@angular/router";
 import {GlobalConstants} from "../common/global-constants";
+import {CdkDragDrop, moveItemInArray} from "@angular/cdk/drag-drop";
+import {NgxSpinnerService} from "ngx-spinner";
 
 @Component({
   selector: 'app-home',
@@ -10,14 +12,18 @@ import {GlobalConstants} from "../common/global-constants";
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  data = []
-  urlApi=`${GlobalConstants.apiURL}/img/heroes`
-  imageSrc: any
   @ViewChild('closebutton') closebutton;
+  data = []
+  urlApi = `${GlobalConstants.apiURL}/img/heroes`
+  imageSrc: any
 
-
-  constructor(private HeroService: HeroesService, private router: Router) {
+  drop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.data, event.previousIndex, event.currentIndex);
   }
+
+  constructor(private HeroService: HeroesService, private router: Router, private spinner: NgxSpinnerService) {
+  }
+
   profileForm = new FormGroup({
     name: new FormControl(''),
     description: new FormControl(''),
@@ -25,6 +31,13 @@ export class HomeComponent implements OnInit {
   });
 
   ngOnInit(): void {
+    /** spinner starts on init */
+    this.spinner.show();
+
+    setTimeout(() => {
+      /** spinner ends after 5 seconds */
+      this.spinner.hide();
+    }, 1000);
     this.HeroService.Read().subscribe(heroes => {
       this.data = heroes
     });
@@ -32,9 +45,9 @@ export class HomeComponent implements OnInit {
 
   onSubmit() {
     this.HeroService.Create(this.profileForm.value).subscribe(() => {
-      this.closebutton.nativeElement.click();
       this.router.navigate(['/'])
-      this.HeroService.ShowMessage('Usuario Criado')
+      this.closebutton.nativeElement.click();
+      this.HeroService.ShowMessage('Heroi criado com sucesso')
     })
   }
 
@@ -54,6 +67,10 @@ export class HomeComponent implements OnInit {
 
       reader.readAsDataURL(file);
     }
+  }
+
+  ml() {
+    console.log('Ola mundo')
   }
 
 }

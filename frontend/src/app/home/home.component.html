@@ -1,3 +1,11 @@
+<ngx-spinner
+  size="large"
+  type="ball-clip-rotate"
+  color="#c21e36"
+  bdColor="rgba(0, 0, 0, 0.3)">
+  <img src='https://www.jupiter.co.ao/sites/default/files/logo_3.png' />
+</ngx-spinner>
+
 <div class="card bg-dark text-white">
   <img src="assets/img/ultron.jpg" class="card-img" alt="...">
   <div class="card-img-overlay">
@@ -12,17 +20,12 @@
   <button type="button" class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#exampleModal">Novo
     Heroi
   </button>
-  <div class="row row-cols-1 row-cols-md-2">
-    <div *ngFor="let heroes of data" class="col mb-4">
-      <div class="card">
-        <img src="{{urlApi}}/{{heroes.id}}/{{heroes.image}}" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">{{heroes.name}}</h5>
-          <p class="card-text">{{heroes.description}}</p>
-        </div>
-      </div>
+  <div cdkDropList cdkDropListOrientation="horizontal" class="example-list w-100" (cdkDropListDropped)="drop($event)">
+    <div (dblclick)="ml()" class="example-box" *ngFor="let heroes of data" cdkDrag>
+      <img src="{{urlApi}}/{{heroes.id}}/{{heroes.image}}" class="card-img-top" alt="...">
     </div>
   </div>
+
 </div>
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

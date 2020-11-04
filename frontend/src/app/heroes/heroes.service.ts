@@ -22,7 +22,7 @@ export class HeroesService {
   verticalPosition: MatSnackBarVerticalPosition = 'top';
 
 
-  constructor(private _snackBar: MatSnackBar, private http: HttpClient) {
+  constructor(private _snackBar: MatSnackBar, private http: HttpClient,) {
   }
 
   ShowMessage(msg: string, isError: boolean = false): void {

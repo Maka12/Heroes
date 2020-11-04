@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {HeroesService} from "../heroes.service";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {HeroesModel} from "../heroes.model";
 import {GlobalConstants} from "../../common/global-constants";
+import {NgxSpinnerService} from "ngx-spinner";
 
 @Component({
   selector: 'app-heroes-view',
@@ -18,10 +19,18 @@ export class HeroesViewComponent implements OnInit {
     description: ''
   }
 
-  constructor(private HeroesService: HeroesService, private rota: ActivatedRoute) {
+  constructor(private HeroesService: HeroesService, private rota: ActivatedRoute, private spinner: NgxSpinnerService) {
   }
 
   ngOnInit(): void {
+    /** spinner starts on init */
+    this.spinner.show();
+
+    setTimeout(() => {
+      /** spinner ends after 5 seconds */
+      this.spinner.hide();
+    }, 1000);
+
     const id = this.rota.snapshot.paramMap.get('id')
     this.HeroesService.View(id).subscribe(hero => {
       this.hero = hero;
