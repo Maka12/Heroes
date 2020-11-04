@@ -14,12 +14,33 @@
             <button routerLink="/heroes-edit/{{hero.id}}" class="mr-2" mat-mini-fab color="primary" aria-label="Example icon button with a filter list icon">
               <mat-icon>edit</mat-icon>
             </button>
-            <button  mat-mini-fab color="warn" aria-label="Example icon button with a filter list icon">
+            <button   mat-mini-fab color="warn" aria-label="Example icon button with a filter list icon" data-toggle="modal" [attr.data-target]="'#exampleModal'+hero.id">
               <mat-icon>delete</mat-icon>
             </button>
           </div>
           <img *cdkDragPreview [src]="urlApi+'/'+hero.id+'/'+hero.image" [alt]="hero.name">
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal{{hero.id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>Tem Certeza que deseja apagar o Hério {{hero.id}}</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+
       </div>
 
     </div>
