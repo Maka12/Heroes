@@ -31,6 +31,7 @@ import {MatInputModule} from "@angular/material/input";
 import { SobreComponent } from './sobre/sobre.component';
 import { PrecoComponent } from './preco/preco.component';
 import { ContatoComponent } from './contato/contato.component';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 
 
@@ -70,7 +71,7 @@ import { ContatoComponent } from './contato/contato.component';
     MatStepperModule,
     MatFormFieldModule,
     MatInputModule,
-
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

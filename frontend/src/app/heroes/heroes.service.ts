@@ -19,7 +19,7 @@ export class HeroesService {
   baseUrl = `${GlobalConstants.apiURL}/api/heroes`;
   baseUrlImg = `${GlobalConstants.apiURL}/api/heroes-alt-img`;
   horizontalPosition: MatSnackBarHorizontalPosition = 'right';
-  verticalPosition: MatSnackBarVerticalPosition = 'top';
+  verticalPosition: MatSnackBarVerticalPosition = 'bottom';
 
 
   constructor(private _snackBar: MatSnackBar, private http: HttpClient,) {

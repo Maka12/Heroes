@@ -5,10 +5,10 @@ import {HeroesReadComponent} from "./heroes/heroes-read/heroes-read.component";
 import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
 import {HeroesViewComponent} from "./heroes/heroes-view/heroes-view.component";
 import {HeroesUpdateComponent} from "./heroes/heroes-update/heroes-update.component";
-import {TestComponent} from "./test/test.component";
 import {SobreComponent} from "./sobre/sobre.component";
 import {PrecoComponent} from "./preco/preco.component";
 import {ContatoComponent} from "./contato/contato.component";
+
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -16,7 +16,7 @@ const routes: Routes = [
   { path: 'galeria', component: HeroesReadComponent },
   { path: 'galeria-view/:id', component: HeroesViewComponent },
   { path: 'galeria-edit/:id', component: HeroesUpdateComponent },
-  { path: 'preco', component: PrecoComponent },
+  { path: 'precos', component: PrecoComponent },
   { path: 'contato', component: ContatoComponent },
   { path: '**', component: PageNotFoundComponent },
 

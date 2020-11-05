@@ -1,1 +1,94 @@
-<p>contato works!</p>
+<ngx-spinner
+  size="large"
+  type="ball-clip-rotate"
+  color="#c21e36"
+  bdColor="rgba(0, 0, 0, 0.3)">
+  <img src='https://www.jupiter.co.ao/sites/default/files/logo_3.png'/>
+</ngx-spinner>
+
+<!-- Header -->
+<header class="bg-jupiter py-5 mt-5 mb-5">
+  <div class="container h-100">
+    <div class="row h-100 align-items-center">
+      <div class="col-lg-12">
+        <h1 class="display-4 text-white mt-5 mb-2">Contato</h1>
+        <p class="lead mb-5 text-white-50">Crie rapidamente uma tabela de preços eficaz para seus clientes em potencial com este exemplo de Bootstrap. É construído com componentes e utilitários padrão do Bootstrap com pouca personalização.</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<!-- Page Content -->
+<div class="container pt-5">
+
+  <!-- Content Row -->
+  <div class="row">
+    <!-- Map Column -->
+    <div class="col-lg-8 mb-4">
+      <!-- Embedded Google Map -->
+      <iframe style="width: 100%; height: 400px; border: 0;" src="http://maps.google.com/maps?hl=en&amp;ie=UTF8&amp;ll=37.0625,-95.677068&amp;spn=56.506174,79.013672&amp;t=m&amp;z=4&amp;output=embed"></iframe>
+    </div>
+    <!-- Contact Details Column -->
+    <div class="col-lg-4 mb-4">
+      <h2>Contate-Nos</h2>
+      <hr>
+      <address>
+        <strong>Entraremos em contato com voçe</strong>
+        <br>Condominio Das Manguerinhas
+        <br>Angola, Lunda
+        <br>
+      </address>
+      <address>
+        <abbr title="Phone">N:</abbr>
+        (+244) 940-234-212
+        <br>
+        <abbr title="Email">E:</abbr>
+        <a class="text-jupiter" href="mailto:#">orlando.santos@jupiter.co.ao</a>
+      </address>
+    </div>
+  </div>
+  <!-- /.row -->
+
+  <!-- Contact Form -->
+  <!-- In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
+  <div class="row">
+    <div class="col-lg-8 mb-4">
+      <h3>Envie-nos uma mensagem</h3>
+      <form name="sentMessage" id="contactForm" novalidate>
+        <div class="control-group form-group">
+          <div class="controls">
+            <label>Nome completo:</label>
+            <input type="text" class="form-control" id="name" required data-validation-required-message="Por favor, insira seu nome.">
+            <p class="help-block"></p>
+          </div>
+        </div>
+        <div class="control-group form-group">
+          <div class="controls">
+            <label>Número de telefone:</label>
+            <input type="tel" class="form-control" id="phone" required data-validation-required-message="Por favor, digite seu número de telefone.">
+          </div>
+        </div>
+        <div class="control-group form-group">
+          <div class="controls">
+            <label>Endereço de e-mail:</label>
+            <input type="email" class="form-control" id="email" required data-validation-required-message="Por favor, indique o seu endereço de e-mail.">
+          </div>
+        </div>
+        <div class="control-group form-group">
+          <div class="controls">
+            <label>Mensagem:</label>
+            <textarea rows="10" cols="100" class="form-control" id="message" required data-validation-required-message="Por favor insira a sua mensagem" maxlength="999" style="resize:none"></textarea>
+          </div>
+        </div>
+        <div id="success"></div>
+        <!-- For success/fail messages -->
+        <button type="submit" class="btn btn-primary bg-jupiter" id="sendMessageButton">Enviar mensagem</button>
+      </form>
+    </div>
+
+  </div>
+  <!-- /.row -->
+
+</div>
+<!-- /.container -->

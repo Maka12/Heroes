@@ -4,6 +4,8 @@ import {HeroesService} from "../heroes.service";
 import {HeroesModel} from "../heroes.model";
 import {FormControl, FormGroup} from "@angular/forms";
 import {GlobalConstants} from "../../common/global-constants";
+import {NgxSpinnerService} from "ngx-spinner";
+
 
 @Component({
   selector: 'app-heroes-update',
@@ -29,10 +31,19 @@ export class HeroesUpdateComponent implements OnInit {
     image: new FormControl('')
   });
 
-  constructor(private HeroesService: HeroesService, private rota: ActivatedRoute, private router: Router) {
+  constructor(private HeroesService: HeroesService, private rota: ActivatedRoute, private router: Router, private spinner: NgxSpinnerService) {
   }
 
   ngOnInit(): void {
+    /** spinner starts on init */
+    this.spinner.show();
+
+    setTimeout(() => {
+      /** spinner ends after 5 seconds */
+      this.spinner.hide();
+    }, 1000);
+
+
     const id = this.rota.snapshot.paramMap.get('id')
     this.HeroesService.View(id).subscribe(hero => {
       this.hero = hero;

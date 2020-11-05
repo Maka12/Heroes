@@ -10,3 +10,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   background-color: #e35e6b;
   color: white;
 }
+.bg-jupiter{
+  background-color: #c21e36 !important;
+}
+.text-jupiter{
+  color: #c21e36 !important;
+}
