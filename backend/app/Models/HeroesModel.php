@@ -10,6 +10,6 @@ class HeroesModel extends Model
     use HasFactory;
 
     protected $table='herois';
-    protected $fillable=['name','description','image'];
+    protected $fillable=['name','resume','description','image','created'];
     public $timestamps= false;
 }

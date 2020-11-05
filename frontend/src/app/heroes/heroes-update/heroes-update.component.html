@@ -9,6 +9,12 @@
           <input type="text" formControlName="name" class="form-control" id="recipient-name" [(ngModel)]="hero.name">
         </div>
         <div class="form-group">
+          <label for="recipient-resume" class="col-form-label"><span class="text-danger">*</span>
+            Resumo:</label>
+          <ckeditor [(ngModel)]="hero.resume" formControlName="resume" id="recipient-resume">
+          </ckeditor>
+        </div>
+        <div class="form-group">
           <label for="recipient-description" class="col-form-label"><span class="text-danger">*</span>
             Descrição:</label>
           <ckeditor [(ngModel)]="hero.description" formControlName="description" id="recipient-description">

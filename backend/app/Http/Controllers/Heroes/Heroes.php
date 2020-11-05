@@ -25,6 +25,7 @@ class Heroes extends Controller
         return response($this->data, 200);
     }
 
+
     /**
      * Store a newly created resource in storage.
      *
@@ -35,6 +36,7 @@ class Heroes extends Controller
     {
         //Salva Usuario
         $dados['name']=$request->name;
+        $dados['resume'] = $request->resume;
         $dados['image']=$request->file('image')->getClientOriginalName();
         $dados['description']=$request->description;
         $this->data = HeroesModel::create($dados);
@@ -76,6 +78,7 @@ class Heroes extends Controller
     public function update(Request $request, $id)
     {
         $this->dados['name'] = $request->name;
+        $this->dados['resume'] = $request->resume;
         $this->dados['description'] = $request->description;
         $this->data = HeroesModel::where(['id' => $id])->first();
         if ($this->data) {

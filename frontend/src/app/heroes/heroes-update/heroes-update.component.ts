@@ -16,6 +16,7 @@ export class HeroesUpdateComponent implements OnInit {
   hero: HeroesModel = {
     id: null,
     name: '',
+    resume:'',
     image: '',
     description: ''
   }
@@ -23,6 +24,7 @@ export class HeroesUpdateComponent implements OnInit {
   profileForm = new FormGroup({
     id: new FormControl(''),
     name: new FormControl(''),
+    resume: new FormControl(''),
     description: new FormControl(''),
     image: new FormControl('')
   });

@@ -15,8 +15,10 @@ export class HeroesViewComponent implements OnInit {
 
   hero: HeroesModel = {
     name: '',
+    resume:'',
     image: '',
-    description: ''
+    description: '',
+    created:'',
   }
 
   constructor(private HeroesService: HeroesService, private rota: ActivatedRoute, private spinner: NgxSpinnerService) {

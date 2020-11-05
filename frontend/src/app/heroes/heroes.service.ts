@@ -37,6 +37,7 @@ export class HeroesService {
   Create(data: HeroesModel): Observable<HeroesModel> {
     const formData = new FormData()
     formData.append('name', data.name)
+    formData.append('resume', data.resume)
     formData.append('image', data.image)
     formData.append('description', data.description)
     return this.http.post<HeroesModel>(this.baseUrl, formData).pipe(

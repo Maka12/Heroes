@@ -25,7 +25,12 @@ import {HeroesUpdateComponent} from './heroes/heroes-update/heroes-update.compon
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {SpinnerComponent} from './parts/spinner/spinner.component';
 import {NgxSpinnerModule} from "ngx-spinner";
-import { NbThemeModule } from '@nebular/theme';
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
+import { SobreComponent } from './sobre/sobre.component';
+import { PrecoComponent } from './preco/preco.component';
+import { ContatoComponent } from './contato/contato.component';
 
 
 
@@ -40,6 +45,9 @@ import { NbThemeModule } from '@nebular/theme';
     HeroesViewComponent,
     HeroesUpdateComponent,
     SpinnerComponent,
+    SobreComponent,
+    PrecoComponent,
+    ContatoComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,6 +67,10 @@ import { NbThemeModule } from '@nebular/theme';
     CKEditorModule,
     MatProgressSpinnerModule,
     NgxSpinnerModule,
+    MatStepperModule,
+    MatFormFieldModule,
+    MatInputModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
