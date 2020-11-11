@@ -12,7 +12,7 @@ PHP |Laravel | v 8.2
 
 ## Developer
 
-- Orlando Do Santos Jawara
+- Orlando Dos Santos Jawara
 
 ### Requerimentos
 
